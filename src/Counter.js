@@ -3,8 +3,17 @@ import React from 'react'
 
 
 class Counter extends React.Component {
-    state = {
-        number: this.props.startNumber
+    state = (
+        JSON.parse(localStorage.getItem('Counter-state')) ||
+        { number: this.props.startNumber }
+    )
+
+    componentDidUpdate() {
+        this.saveInLocalStorage()
+    }
+
+    saveInLocalStorage() {
+        localStorage.setItem('Counter-state', JSON.stringify(this.state))
     }
 
     PlusOneHandler = () => {
