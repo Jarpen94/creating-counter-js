@@ -16,19 +16,19 @@ class Counter extends React.Component {
         localStorage.setItem('Counter-state', JSON.stringify(this.state))
     }
 
-    PlusOneHandler = () => {
+    plusOneHandler = () => {
         this.setState({ number: this.state.number + 1 })
     }
 
-    MinusOneHandler = () => {
+    minusOneHandler = () => {
         this.setState({ number: this.state.number - 1 })
     }
 
-    PlusFiveHandler = () => {
+    plusFiveHandler = () => {
         this.setState({ number: this.state.number + 5 })
     }
 
-    MinusFiveHandler = () => {
+    minusFiveHandler = () => {
         this.setState({ number: this.state.number - 5 })
     }
 
@@ -41,23 +41,23 @@ class Counter extends React.Component {
             <div>
                 <h1>{this.state.number}</h1>
                 <button
-                    onClick={this.PlusOneHandler}
+                    onClick={this.plusOneHandler}
                 >
                     +1
                 </button>
 
                 <button
-                    onClick={this.MinusOneHandler}
+                    onClick={this.minusOneHandler}
                 >
                     -1
                 </button>
                 <button
-                    onClick={this.PlusFiveHandler}
+                    onClick={this.plusFiveHandler}
                 >
                     +5
                 </button>
                 <button
-                    onClick={this.MinusFiveHandler}
+                    onClick={this.minusFiveHandler}
                 >
                     -5
                 </button>
